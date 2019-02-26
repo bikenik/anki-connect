@@ -524,6 +524,11 @@ class AnkiConnect:
     
 
     @api()
+    def loadProfileName(self):
+        return self.window().pm.name
+
+
+    @api()
     def sync(self):
         self.window().onSync()
 

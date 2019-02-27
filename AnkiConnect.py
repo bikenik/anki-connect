@@ -510,7 +510,7 @@ class AnkiConnect:
     @api()
     def loadProfile(self, name):
         if name not in self.window().pm.profiles():
-            return self.window().pm.profiles()
+            return False
         if not self.window().isVisible():
             self.window().pm.load(name)
             self.window().loadProfile()
@@ -520,7 +520,7 @@ class AnkiConnect:
             if cur_profile != name:
                 self.window().unloadProfileAndShowProfileManager()
                 self.loadProfile(name)
-        return True
+        return self.window().pm.profiles()
     
 
     @api()
